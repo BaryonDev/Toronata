@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Toronata</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#2D5016',
+                            black: '#1A1A1A',
+                            gray: '#F5F5F5',
+                            text: '#333333',
+                            muted: '#888888'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sidebar.css">
+</head>
+
+<body class="bg-white text-brand-text font-sans antialiased h-screen overflow-hidden flex">
+
+    <!-- Left Sidebar -->
+    <aside id="left-sidebar"
+        class="w-64 h-full flex flex-col border-r border-gray-100 p-6 overflow-y-auto hidden md:flex flex-shrink-0">
+        <!-- Logo -->
+        <div class="mainimage" style="padding-bottom: 10px;">
+            <img src="logos.svg" alt="Toronata Logo" class="h-16 w-auto">
+        </div>
+
+        <!-- User Profile -->
+        <div class="flex items-center gap-3 mb-8 p-3 rounded-xl border border-gray-100 shadow-sm">
+            <img src="https://i.pravatar.cc/150?u=rae" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+                <h4 class="text-sm font-bold text-brand-black truncate">Rae</h4>
+                <p class="text-xs text-brand-muted truncate">rae.email@gmail.com</p>
+            </div>
+            <i class="fa-solid fa-chevron-down text-xs text-brand-muted"></i>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 space-y-1">
+            <a href="index.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+            <a href="saved.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-regular fa-bookmark"></i>
+                Saved
+            </a>
+            <a href="history.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-regular fa-clock"></i>
+                Read History
+            </a>
+
+
+            <div class="pt-6 pb-2">
+                <div class="h-px bg-gray-100 w-full"></div>
+            </div>
+
+            <a href="trending.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                Now Trending
+            </a>
+            <a href="categories.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-solid fa-list"></i>
+                Categories
+            </a>
+
+            <div class="pt-6 pb-2">
+                <div class="h-px bg-gray-100 w-full"></div>
+            </div>
+            <a href="settings.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-solid fa-gear"></i>
+                Setting
+            </a>
+            <a href="profile.html"
+                class="flex items-center gap-3 px-4 py-3 bg-gray-50 text-brand-black font-medium rounded-xl">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+            <a href="help.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-regular fa-circle-question"></i>
+                Help
+            </a>
+            <a href="feedback.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-regular fa-message"></i>
+                Send Feedback
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 h-full overflow-y-auto bg-white relative px-8 py-6">
+        <!-- Mobile Header -->
+        <div class="md:hidden flex items-center justify-between mb-6">
+            <button id="left-sidebar-toggle"
+                class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-brand-black text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <span class="font-bold text-xl text-brand-black">Toronata</span>
+            <button id="right-sidebar-toggle"
+                class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-brand-black text-xl">
+                <i class="fa-solid fa-star"></i>
+            </button>
+        </div>
+
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-brand-black mb-1">Profile</h1>
+                <p class="text-brand-muted text-sm">View your public profile.</p>
+            </div>
+        </div>
+
+        <div class="max-w-4xl">
+            <!-- Profile Hero -->
+            <div
+                class="bg-brand-gray rounded-3xl p-8 mb-10 flex flex-col md:flex-row items-center md:items-start gap-8">
+                <div class="relative">
+                    <img src="https://i.pravatar.cc/150?u=rae" alt="Profile"
+                        class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg">
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                    <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 mb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold text-brand-black">Rae M</h2>
+                            <p class="text-brand-muted">@rae_m</p>
+                        </div>
+                        <a href="settings.html"
+                            class="px-6 py-2 rounded-full border border-gray-300 text-sm font-bold text-brand-black hover:bg-white transition-colors bg-white/50 backdrop-blur-sm">
+                            Edit Profile
+                        </a>
+                    </div>
+                    <p class="text-brand-text max-w-lg mb-6">Passionate about technology and design. Always learning
+                        something new. Avid reader of tech trends and environmental news.</p>
+
+                    <!-- Stats -->
+                    <div class="flex items-center justify-center md:justify-start gap-8">
+                        <div class="text-center md:text-left">
+                            <span class="block text-xl font-bold text-brand-black">142</span>
+                            <span class="text-xs text-brand-muted uppercase tracking-wide">Articles Read</span>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <span class="block text-xl font-bold text-brand-black">28</span>
+                            <span class="text-xs text-brand-muted uppercase tracking-wide">Saved</span>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <span class="block text-xl font-bold text-brand-black">45</span>
+                            <span class="text-xs text-brand-muted uppercase tracking-wide">Following</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div>
+                <h3 class="text-xl font-bold text-brand-black mb-6">Recent Activity</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Article 1 -->
+                    <div
+                        class="group cursor-pointer bg-white border border-gray-100 rounded-2xl p-4 hover:shadow-md hover:border-brand-orange/30 transition-all">
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=200&auto=format&fit=crop"
+                                class="w-24 h-24 rounded-xl object-cover flex-shrink-0">
+                            <div class="flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-bold text-brand-orange mb-1 block">Technology</span>
+                                    <h4
+                                        class="text-base font-bold text-brand-black leading-snug group-hover:text-brand-orange transition-colors line-clamp-2">
+                                        New Solar Panel Technology Increases Efficiency by 30%
+                                    </h4>
+                                </div>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-xs text-brand-muted">Read 2 hours ago</span>
+                                    <i
+                                        class="fa-solid fa-arrow-right text-brand-muted group-hover:text-brand-orange transition-colors transform group-hover:translate-x-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div
+                        class="group cursor-pointer bg-white border border-gray-100 rounded-2xl p-4 hover:shadow-md hover:border-brand-orange/30 transition-all">
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=200&auto=format&fit=crop"
+                                class="w-24 h-24 rounded-xl object-cover flex-shrink-0">
+                            <div class="flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-bold text-green-500 mb-1 block">Environment</span>
+                                    <h4
+                                        class="text-base font-bold text-brand-black leading-snug group-hover:text-brand-orange transition-colors line-clamp-2">
+                                        World's Oldest Known Tree Discovered in Australia
+                                    </h4>
+                                </div>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-xs text-brand-muted">Read yesterday</span>
+                                    <i
+                                        class="fa-solid fa-arrow-right text-brand-muted group-hover:text-brand-orange transition-colors transform group-hover:translate-x-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div
+                        class="group cursor-pointer bg-white border border-gray-100 rounded-2xl p-4 hover:shadow-md hover:border-brand-orange/30 transition-all">
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=200&auto=format&fit=crop"
+                                class="w-24 h-24 rounded-xl object-cover flex-shrink-0">
+                            <div class="flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-bold text-purple-500 mb-1 block">Art & AI</span>
+                                    <h4
+                                        class="text-base font-bold text-brand-black leading-snug group-hover:text-brand-orange transition-colors line-clamp-2">
+                                        AI Technology Can Now Create Art in the Style of Famous Painters
+                                    </h4>
+                                </div>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-xs text-brand-muted">Read 2 days ago</span>
+                                    <i
+                                        class="fa-solid fa-arrow-right text-brand-muted group-hover:text-brand-orange transition-colors transform group-hover:translate-x-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 4 -->
+                    <div
+                        class="group cursor-pointer bg-white border border-gray-100 rounded-2xl p-4 hover:shadow-md hover:border-brand-orange/30 transition-all">
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=200&auto=format&fit=crop"
+                                class="w-24 h-24 rounded-xl object-cover flex-shrink-0">
+                            <div class="flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-bold text-blue-500 mb-1 block">Cybersecurity</span>
+                                    <h4
+                                        class="text-base font-bold text-brand-black leading-snug group-hover:text-brand-orange transition-colors line-clamp-2">
+                                        Major Data Breach Affects Millions of Users Worldwide
+                                    </h4>
+                                </div>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-xs text-brand-muted">Read 3 days ago</span>
+                                    <i
+                                        class="fa-solid fa-arrow-right text-brand-muted group-hover:text-brand-orange transition-colors transform group-hover:translate-x-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside id="right-sidebar"
+        class="w-80 h-full border-l border-gray-100 p-6 overflow-y-auto hidden xl:block flex-shrink-0">
+        <!-- Curated Picks -->
+        <div class="mb-10">
+            <h3 class="text-lg font-bold text-brand-black mb-6">Curated Picks</h3>
+            <div class="space-y-6">
+                <!-- Pick 1 -->
+                <div class="group cursor-pointer">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="https://i.pravatar.cc/150?u=alfredo" class="w-5 h-5 rounded-full">
+                        <span class="text-xs font-bold text-brand-black">Alfredo Lubin</span>
+                        <span class="text-xs text-brand-muted">•</span>
+                        <span class="text-xs text-brand-muted">Technology</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <h4
+                                class="text-sm font-bold text-brand-black leading-snug mb-2 group-hover:text-brand-orange transition-colors">
+                                New Solar Panel Technology Increases Efficiency by 30%</h4>
+                            <div class="flex items-center gap-3 text-xs text-brand-muted">
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>11 July 2024</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span>2 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=200&auto=format&fit=crop"
+                            class="w-20 h-14 rounded-lg object-cover flex-shrink-0">
+                    </div>
+                    <div class="flex justify-end mt-2">
+                        <i
+                            class="fa-regular fa-bookmark text-brand-muted hover:text-brand-black transition-colors text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Pick 2 -->
+                <div class="group cursor-pointer">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="https://i.pravatar.cc/150?u=justin" class="w-5 h-5 rounded-full">
+                        <span class="text-xs font-bold text-brand-black">Justin Levin</span>
+                        <span class="text-xs text-brand-muted">•</span>
+                        <span class="text-xs text-brand-muted">Environment</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <h4
+                                class="text-sm font-bold text-brand-black leading-snug mb-2 group-hover:text-brand-orange transition-colors">
+                                World's Oldest Known Tree Discovered in Australia</h4>
+                            <div class="flex items-center gap-3 text-xs text-brand-muted">
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>12 July 2024</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span>4 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=200&auto=format&fit=crop"
+                            class="w-20 h-14 rounded-lg object-cover flex-shrink-0">
+                    </div>
+                    <div class="flex justify-end mt-2">
+                        <i
+                            class="fa-regular fa-bookmark text-brand-muted hover:text-brand-black transition-colors text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Pick 3 -->
+                <div class="group cursor-pointer">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="https://i.pravatar.cc/150?u=charlie" class="w-5 h-5 rounded-full">
+                        <span class="text-xs font-bold text-brand-black">Charlie Dorwart</span>
+                        <span class="text-xs text-brand-muted">•</span>
+                        <span class="text-xs text-brand-muted">Technology</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <h4
+                                class="text-sm font-bold text-brand-black leading-snug mb-2 group-hover:text-brand-orange transition-colors">
+                                AI Technology Can Now Create Art in the Style of Famous Painters</h4>
+                            <div class="flex items-center gap-3 text-xs text-brand-muted">
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>13 July 2024</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=200&auto=format&fit=crop"
+                            class="w-20 h-14 rounded-lg object-cover flex-shrink-0">
+                    </div>
+                    <div class="flex justify-end mt-2">
+                        <i
+                            class="fa-regular fa-bookmark text-brand-muted hover:text-brand-black transition-colors text-sm"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="mb-10">
+            <h3 class="text-lg font-bold text-brand-black mb-4">Categories</h3>
+            <div class="flex flex-wrap gap-2">
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Fashion</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Politics</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Entertainment</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Sports</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Technology</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Finance</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Health
+                    & Wellness</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Science</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Lifestyle</a>
+            </div>
+            <a href="#"
+                class="inline-block mt-4 text-xs font-bold text-brand-black underline decoration-brand-muted underline-offset-4 hover:text-brand-orange transition-colors">View
+                More Categories</a>
+        </div>
+
+        <!-- Recommended Follows -->
+        <div>
+            <h3 class="text-lg font-bold text-brand-black mb-6">Recommended Follows</h3>
+            <div class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/150?u=haylie_botosh"
+                            class="w-10 h-10 rounded-full object-cover">
+                        <span class="text-sm font-bold text-brand-black">Haylie Botosh</span>
+                    </div>
+                    <button
+                        class="px-4 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-brand-black hover:bg-brand-black hover:text-white transition-colors flex items-center gap-1">
+                        Follow <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/150?u=emerson" class="w-10 h-10 rounded-full object-cover">
+                        <span class="text-sm font-bold text-brand-black">Emerson Dias</span>
+                    </div>
+                    <button
+                        class="px-4 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-brand-black hover:bg-brand-black hover:text-white transition-colors flex items-center gap-1">
+                        Follow <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div id="sidebar-overlay"></div>
+    <script src="script.js"></script>
+    <script src="sidebar.js"></script>
+</body>
+
+</html>

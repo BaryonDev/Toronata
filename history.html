@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read History - Toronata</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#2D5016',
+                            black: '#1A1A1A',
+                            gray: '#F5F5F5',
+                            text: '#333333',
+                            muted: '#888888'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sidebar.css">
+</head>
+
+<body class="bg-white text-brand-text font-sans antialiased h-screen overflow-hidden flex">
+
+    <!-- Left Sidebar -->
+    <aside id="left-sidebar"
+        class="w-64 h-full flex flex-col border-r border-gray-100 p-6 overflow-y-auto hidden md:flex flex-shrink-0">
+        <div class="mainimage" style="padding-bottom: 10px;">
+            <img src="logos.svg" alt="Toronata Logo" class="h-16 w-auto">
+        </div>
+
+        <!-- User Profile -->
+        <div class="flex items-center gap-3 mb-8 p-3 rounded-xl border border-gray-100 shadow-sm">
+            <img src="https://i.pravatar.cc/150?u=rae" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+            <div class="flex-1 min-w-0">
+                <h4 class="text-sm font-bold text-brand-black truncate">Rae</h4>
+                <p class="text-xs text-brand-muted truncate">rae.email@gmail.com</p>
+            </div>
+            <i class="fa-solid fa-chevron-down text-xs text-brand-muted"></i>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 space-y-1">
+            <a href="index.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+            <a href="saved.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-regular fa-bookmark"></i>
+                Saved
+            </a>
+            <a href="history.html"
+                class="flex items-center gap-3 px-4 py-3 bg-gray-50 text-brand-black font-medium rounded-xl">
+                <i class="fa-solid fa-clock"></i>
+                Read History
+            </a>
+
+
+            <div class="pt-6 pb-2">
+                <div class="h-px bg-gray-100 w-full"></div>
+            </div>
+
+            <a href="trending.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                Now Trending
+            </a>
+            <a href="categories.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-solid fa-list"></i>
+                Categories
+            </a>
+
+            <div class="pt-6 pb-2">
+                <div class="h-px bg-gray-100 w-full"></div>
+            </div>
+            <a href="settings.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-solid fa-gear"></i>
+                Setting
+            </a>
+            <a href="profile.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+            <a href="help.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-regular fa-circle-question"></i>
+                Help
+            </a>
+            <a href="feedback.html"
+                class="flex items-center gap-3 px-4 py-3 text-brand-muted hover:bg-gray-50 hover:text-brand-black font-medium rounded-xl transition-colors">
+                <i class="fa-regular fa-message"></i>
+                Send Feedback
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 h-full overflow-y-auto bg-white relative px-8 py-6">
+        <!-- Mobile Header -->
+        <div class="md:hidden flex items-center justify-between mb-6">
+            <button id="left-sidebar-toggle"
+                class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-brand-black text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <span class="font-bold text-xl text-brand-black">Toronata</span>
+            <button id="right-sidebar-toggle"
+                class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-brand-black text-xl">
+                <i class="fa-solid fa-star"></i>
+            </button>
+        </div>
+
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-brand-black mb-1">Read History</h1>
+                <p class="text-brand-muted text-sm">Continue where you left off.</p>
+            </div>
+            <div class="flex gap-4">
+                <div class="relative">
+                    <i
+                        class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 transform -translate-y-1/2 text-brand-muted text-sm"></i>
+                    <input type="text" placeholder="Search history..."
+                        class="pl-10 pr-4 py-2.5 rounded-full border border-gray-200 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all text-sm w-64">
+                </div>
+                <button
+                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-brand-text hover:bg-gray-50 transition-colors">
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Timeline: Today -->
+        <div class="mb-10">
+            <h2 class="text-sm font-bold text-brand-muted uppercase tracking-wider mb-4 pl-1">Today</h2>
+            <div class="space-y-4">
+                <!-- Item 1 -->
+                <div
+                    class="group flex flex-col sm:flex-row gap-4 p-4 rounded-2xl border border-gray-100 hover:shadow-md transition-all duration-300 bg-white">
+                    <div class="w-full sm:w-40 h-24 rounded-xl overflow-hidden flex-shrink-0 relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=200&auto=format&fit=crop"
+                            alt="Data"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-200">
+                            <div class="h-full bg-brand-orange w-[75%]"></div>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between py-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-bold text-brand-orange">Big Data</span>
+                                <span class="text-xs text-brand-muted">Opened 2 hours ago</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-brand-black mb-1 group-hover:text-brand-orange transition-colors line-clamp-1">
+                                How Big Data is Transforming Healthcare</h3>
+                            <p class="text-sm text-brand-muted line-clamp-1">The integration of big data
+                                analytics in
+                                healthcare is revolutionizing patient care...</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs font-bold text-brand-black">75% Completed</span>
+                            <button
+                                class="text-xs font-bold text-brand-orange hover:text-brand-black transition-colors flex items-center gap-1">
+                                Resume Reading <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div
+                    class="group flex flex-col sm:flex-row gap-4 p-4 rounded-2xl border border-gray-100 hover:shadow-md transition-all duration-300 bg-white">
+                    <div class="w-full sm:w-40 h-24 rounded-xl overflow-hidden flex-shrink-0 relative">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=200&auto=format&fit=crop"
+                            alt="AI"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors">
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-play text-white text-xs ml-0.5"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-200">
+                            <div class="h-full bg-red-600 w-[30%]"></div>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between py-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-bold text-red-600 flex items-center gap-1"><i
+                                        class="fa-brands fa-youtube"></i> Video</span>
+                                <span class="text-xs text-brand-muted">Opened 4 hours ago</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-brand-black mb-1 group-hover:text-brand-orange transition-colors line-clamp-1">
+                                The Rise of AI in Modern Web Design</h3>
+                            <p class="text-sm text-brand-muted line-clamp-1">Exploring how artificial
+                                intelligence is
+                                reshaping the landscape of digital design...</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs font-bold text-brand-black">30% Watched</span>
+                            <button
+                                class="text-xs font-bold text-brand-orange hover:text-brand-black transition-colors flex items-center gap-1">
+                                Resume Watching <i class="fa-solid fa-play text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline: Yesterday -->
+        <div class="mb-10">
+            <h2 class="text-sm font-bold text-brand-muted uppercase tracking-wider mb-4 pl-1">Yesterday</h2>
+            <div class="space-y-4">
+                <!-- Item 3 -->
+                <div
+                    class="group flex flex-col sm:flex-row gap-4 p-4 rounded-2xl border border-gray-100 hover:shadow-md transition-all duration-300 bg-white opacity-75 hover:opacity-100">
+                    <div
+                        class="w-full sm:w-40 h-24 rounded-xl overflow-hidden flex-shrink-0 relative grayscale group-hover:grayscale-0 transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1526304640152-d4619684e484?q=80&w=200&auto=format&fit=crop"
+                            alt="Finance"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-green-500"></div>
+                        <div
+                            class="absolute top-2 right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                            Finished
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between py-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-bold text-green-600">Finance</span>
+                                <span class="text-xs text-brand-muted">Yesterday</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-brand-black mb-1 group-hover:text-brand-orange transition-colors line-clamp-1">
+                                Cryptocurrency: A Bubble or the Future?</h3>
+                            <p class="text-sm text-brand-muted line-clamp-1">An in-depth analysis of the current
+                                state
+                                of the crypto market and future predictions...</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs font-bold text-green-600 flex items-center gap-1"><i
+                                    class="fa-solid fa-check"></i> Completed</span>
+                            <button
+                                class="text-xs font-bold text-brand-muted hover:text-brand-black transition-colors flex items-center gap-1">
+                                Read Again <i class="fa-solid fa-rotate-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline: This Week -->
+        <div class="mb-10">
+            <h2 class="text-sm font-bold text-brand-muted uppercase tracking-wider mb-4 pl-1">This Week</h2>
+            <div class="space-y-4">
+                <!-- Item 4 -->
+                <div
+                    class="group flex flex-col sm:flex-row gap-4 p-4 rounded-2xl border border-gray-100 hover:shadow-md transition-all duration-300 bg-white">
+                    <div class="w-full sm:w-40 h-24 rounded-xl overflow-hidden flex-shrink-0 relative">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200&auto=format&fit=crop"
+                            alt="Opinion"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-200">
+                            <div class="h-full bg-brand-orange w-[10%]"></div>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between py-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-bold text-purple-600">Opinion</span>
+                                <span class="text-xs text-brand-muted">Mon, 15 July</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold text-brand-black mb-1 group-hover:text-brand-orange transition-colors line-clamp-1">
+                                Why We Need to Rethink Work-Life Balance</h3>
+                            <p class="text-sm text-brand-muted line-clamp-1">The traditional 9-to-5 model is
+                                becoming
+                                obsolete in the face of remote work...</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs font-bold text-brand-black">10% Completed</span>
+                            <button
+                                class="text-xs font-bold text-brand-orange hover:text-brand-black transition-colors flex items-center gap-1">
+                                Resume Reading <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside id="right-sidebar"
+        class="w-80 h-full border-l border-gray-100 p-6 overflow-y-auto hidden xl:block flex-shrink-0">
+        <!-- Curated Picks -->
+        <div class="mb-10">
+            <h3 class="text-lg font-bold text-brand-black mb-6">Curated Picks</h3>
+            <div class="space-y-6">
+                <!-- Pick 1 -->
+                <div class="group cursor-pointer">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="https://i.pravatar.cc/150?u=alfredo" class="w-5 h-5 rounded-full">
+                        <span class="text-xs font-bold text-brand-black">Alfredo Lubin</span>
+                        <span class="text-xs text-brand-muted">•</span>
+                        <span class="text-xs text-brand-muted">Technology</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <h4
+                                class="text-sm font-bold text-brand-black leading-snug mb-2 group-hover:text-brand-orange transition-colors">
+                                New Solar Panel Technology Increases Efficiency by 30%</h4>
+                            <div class="flex items-center gap-3 text-xs text-brand-muted">
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>11 July 2024</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span>2 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=200&auto=format&fit=crop"
+                            class="w-20 h-14 rounded-lg object-cover flex-shrink-0">
+                    </div>
+                    <div class="flex justify-end mt-2">
+                        <i
+                            class="fa-regular fa-bookmark text-brand-muted hover:text-brand-black transition-colors text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Pick 2 -->
+                <div class="group cursor-pointer">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="https://i.pravatar.cc/150?u=justin" class="w-5 h-5 rounded-full">
+                        <span class="text-xs font-bold text-brand-black">Justin Levin</span>
+                        <span class="text-xs text-brand-muted">•</span>
+                        <span class="text-xs text-brand-muted">Environment</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <h4
+                                class="text-sm font-bold text-brand-black leading-snug mb-2 group-hover:text-brand-orange transition-colors">
+                                World's Oldest Known Tree Discovered in Australia</h4>
+                            <div class="flex items-center gap-3 text-xs text-brand-muted">
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>12 July 2024</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span>4 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=200&auto=format&fit=crop"
+                            class="w-20 h-14 rounded-lg object-cover flex-shrink-0">
+                    </div>
+                    <div class="flex justify-end mt-2">
+                        <i
+                            class="fa-regular fa-bookmark text-brand-muted hover:text-brand-black transition-colors text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Pick 3 -->
+                <div class="group cursor-pointer">
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="https://i.pravatar.cc/150?u=charlie" class="w-5 h-5 rounded-full">
+                        <span class="text-xs font-bold text-brand-black">Charlie Dorwart</span>
+                        <span class="text-xs text-brand-muted">•</span>
+                        <span class="text-xs text-brand-muted">Technology</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <h4
+                                class="text-sm font-bold text-brand-black leading-snug mb-2 group-hover:text-brand-orange transition-colors">
+                                AI Technology Can Now Create Art in the Style of Famous Painters</h4>
+                            <div class="flex items-center gap-3 text-xs text-brand-muted">
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>13 July 2024</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=200&auto=format&fit=crop"
+                            class="w-20 h-14 rounded-lg object-cover flex-shrink-0">
+                    </div>
+                    <div class="flex justify-end mt-2">
+                        <i
+                            class="fa-regular fa-bookmark text-brand-muted hover:text-brand-black transition-colors text-sm"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="mb-10">
+            <h3 class="text-lg font-bold text-brand-black mb-4">Categories</h3>
+            <div class="flex flex-wrap gap-2">
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Fashion</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Politics</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Entertainment</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Sports</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Technology</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Finance</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Health
+                    & Wellness</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Science</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-full border border-gray-200 text-xs font-medium text-brand-text hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors">Lifestyle</a>
+            </div>
+            <a href="#"
+                class="inline-block mt-4 text-xs font-bold text-brand-black underline decoration-brand-muted underline-offset-4 hover:text-brand-orange transition-colors">View
+                More Categories</a>
+        </div>
+
+        <!-- Recommended Follows -->
+        <div>
+            <h3 class="text-lg font-bold text-brand-black mb-6">Recommended Follows</h3>
+            <div class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/150?u=haylie_botosh"
+                            class="w-10 h-10 rounded-full object-cover">
+                        <span class="text-sm font-bold text-brand-black">Haylie Botosh</span>
+                    </div>
+                    <button
+                        class="px-4 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-brand-black hover:bg-brand-black hover:text-white transition-colors flex items-center gap-1">
+                        Follow <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/150?u=emerson" class="w-10 h-10 rounded-full object-cover">
+                        <span class="text-sm font-bold text-brand-black">Emerson Dias</span>
+                    </div>
+                    <button
+                        class="px-4 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-brand-black hover:bg-brand-black hover:text-white transition-colors flex items-center gap-1">
+                        Follow <i class="fa-solid fa-plus text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div id="sidebar-overlay"></div>
+    <script src="script.js"></script>
+    <script src="sidebar.js"></script>
+</body>
+
+</html>

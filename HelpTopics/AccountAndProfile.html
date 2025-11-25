@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account & Profile - Bace Help</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            orange: '#FF5722', black: '#1A1A1A', gray: '#F5F5F5',
+                            text: '#333333', muted: '#888888'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../sidebar.css">
+</head>
+<body class="bg-white text-brand-text font-sans antialiased">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../help.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <i class="fa-solid fa-arrow-left text-brand-muted"></i>
+                    <span class="text-sm font-medium text-brand-muted">Back to Help</span>
+                </a>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold">
+                        <i class="fa-solid fa-b"></i>
+                    </div>
+                    <span class="text-xl font-bold text-brand-black">Bace</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="w-20 h-20 bg-blue-500 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 shadow-lg">
+                <i class="fa-regular fa-user text-4xl"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-brand-black mb-4">Account & Profile</h1>
+            <p class="text-lg text-brand-muted max-w-2xl mx-auto">Everything you need to know about managing your account, profile, and preferences.</p>
+        </div>
+    </section>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+            <a href="#create" class="p-4 rounded-xl border border-gray-200 hover:border-brand-orange hover:shadow-md transition-all text-center group">
+                <i class="fa-solid fa-user-plus text-2xl text-brand-orange mb-2"></i>
+                <p class="text-sm font-bold text-brand-black group-hover:text-brand-orange">Create Account</p>
+            </a>
+            <a href="#manage" class="p-4 rounded-xl border border-gray-200 hover:border-brand-orange hover:shadow-md transition-all text-center group">
+                <i class="fa-solid fa-sliders text-2xl text-brand-orange mb-2"></i>
+                <p class="text-sm font-bold text-brand-black group-hover:text-brand-orange">Manage Profile</p>
+            </a>
+            <a href="#preferences" class="p-4 rounded-xl border border-gray-200 hover:border-brand-orange hover:shadow-md transition-all text-center group">
+                <i class="fa-solid fa-gear text-2xl text-brand-orange mb-2"></i>
+                <p class="text-sm font-bold text-brand-black group-hover:text-brand-orange">Preferences</p>
+            </a>
+        </div>
+
+        <section id="create" class="mb-16">
+            <h2 class="text-3xl font-bold text-brand-black mb-6">Creating Your Account</h2>
+
+            <div class="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-8 mb-8">
+                <h3 class="text-xl font-bold text-brand-black mb-6">Sign up in 3 easy steps</h3>
+
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold text-brand-black mb-2">Visit the sign-up page</h4>
+                            <p class="text-sm text-brand-text">Click "Sign Up" in the top right corner of any page or go directly to bace.com/signup</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold text-brand-black mb-2">Enter your information</h4>
+                            <p class="text-sm text-brand-text mb-2">Provide your email address, create a password, and choose a display name</p>
+                            <p class="text-xs text-brand-muted">Or sign up quickly with Google, Apple, or Facebook</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold text-brand-black mb-2">Verify your email</h4>
+                            <p class="text-sm text-brand-text">Check your inbox for a verification email and click the link to activate your account</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        What information do I need to sign up?
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3">To create a Bace account, you'll need:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-blue-500 mt-0.5"></i>
+                                <span>A valid email address</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-blue-500 mt-0.5"></i>
+                                <span>A secure password (at least 8 characters)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-blue-500 mt-0.5"></i>
+                                <span>A display name (can be changed later)</span>
+                            </li>
+                        </ul>
+                        <p class="mt-3 text-brand-muted text-xs">Optional: Profile picture, bio, and interests can be added after signup.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        Can I sign up with social media?
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3">Yes! You can sign up using:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-brands fa-google text-brand-orange"></i>
+                                <span>Google account</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-brands fa-apple text-brand-orange"></i>
+                                <span>Apple ID</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-brands fa-facebook text-brand-orange"></i>
+                                <span>Facebook account</span>
+                            </li>
+                        </ul>
+                        <p class="mt-3">This allows for quick signup without creating a new password. Your social media credentials are never stored by Bace.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        I didn't receive the verification email
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3">If you haven't received your verification email:</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Check your spam or junk folder</li>
+                            <li>Make sure you entered the correct email address</li>
+                            <li>Wait a few minutes - emails can sometimes be delayed</li>
+                            <li>Click "Resend verification email" on the login page</li>
+                            <li>Contact support if you still don't receive it after 30 minutes</li>
+                        </ol>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="manage" class="mb-16">
+            <h2 class="text-3xl font-bold text-brand-black mb-6">Managing Your Profile</h2>
+
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 mb-6">
+                <h3 class="text-lg font-bold text-brand-black mb-4">Profile customization options</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-image text-purple-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-black text-sm mb-1">Profile Picture</h4>
+                            <p class="text-xs text-brand-text">Upload a photo or choose an avatar. Max size: 5MB</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-signature text-green-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-black text-sm mb-1">Display Name</h4>
+                            <p class="text-xs text-brand-text">How your name appears to other users</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-pen text-yellow-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-black text-sm mb-1">Bio</h4>
+                            <p class="text-xs text-brand-text">Tell others about yourself (up to 160 characters)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-heart text-red-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-black text-sm mb-1">Interests</h4>
+                            <p class="text-xs text-brand-text">Select topics you're interested in for personalized recommendations</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-link text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-black text-sm mb-1">Social Links</h4>
+                            <p class="text-xs text-brand-text">Add links to your website or social media profiles</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-eye-slash text-pink-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-black text-sm mb-1">Privacy Settings</h4>
+                            <p class="text-xs text-brand-text">Control who can see your profile and activity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-6">
+                <div class="flex gap-4">
+                    <i class="fa-solid fa-lightbulb text-blue-500 text-xl flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-brand-black mb-2">How to edit your profile</h4>
+                        <ol class="list-decimal list-inside space-y-1 text-sm text-brand-text">
+                            <li>Click on your profile picture in the sidebar</li>
+                            <li>Select "Edit Profile"</li>
+                            <li>Make your desired changes</li>
+                            <li>Click "Save Changes" at the bottom</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        How do I change my email address?
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Go to Settings > Account</li>
+                            <li>Click "Change Email"</li>
+                            <li>Enter your new email address</li>
+                            <li>Verify with your current password</li>
+                            <li>Check both old and new email for confirmation links</li>
+                            <li>Click the link in your new email to complete the change</li>
+                        </ol>
+                        <p class="mt-3 text-brand-muted text-xs">Note: You'll need to verify the new email before it becomes active.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        Can I change my username?
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3">Yes, you can change your display name anytime:</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Go to your profile settings</li>
+                            <li>Click on your current display name</li>
+                            <li>Enter your new name</li>
+                            <li>Save changes</li>
+                        </ol>
+                        <p class="mt-3 text-brand-muted text-xs">Your username can be changed once every 30 days.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        How do I delete my account?
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3">We're sorry to see you go. To delete your account:</p>
+                        <ol class="list-decimal list-inside space-y-2 mb-4">
+                            <li>Go to Settings > Account > Delete Account</li>
+                            <li>Read the information about what will be deleted</li>
+                            <li>Enter your password to confirm</li>
+                            <li>Click "Permanently Delete Account"</li>
+                        </ol>
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-3">
+                            <p class="text-xs text-red-700"><strong>Warning:</strong> This action is permanent and cannot be undone. All your data, saved articles, and reading history will be deleted.</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="preferences" class="mb-16">
+            <h2 class="text-3xl font-bold text-brand-black mb-6">Account Preferences</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-bell text-blue-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Notification Settings</h3>
+                    <p class="text-sm text-brand-text mb-4">Control which notifications you receive via email, push, or in-app.</p>
+                    <ul class="space-y-2 text-sm text-brand-text">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>New articles from followed authors</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Daily digest of trending topics</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Comments and replies</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-eye text-green-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Privacy Controls</h3>
+                    <p class="text-sm text-brand-text mb-4">Manage who can see your profile, reading activity, and saved articles.</p>
+                    <ul class="space-y-2 text-sm text-brand-text">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Public, Friends Only, or Private profile</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Hide reading history</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Block specific users</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-language text-purple-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Language & Region</h3>
+                    <p class="text-sm text-brand-text mb-4">Set your preferred language and regional content preferences.</p>
+                    <ul class="space-y-2 text-sm text-brand-text">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Interface language</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Content language preferences</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Time zone settings</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-wand-magic-sparkles text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Content Recommendations</h3>
+                    <p class="text-sm text-brand-text mb-4">Customize how we recommend articles and topics to you.</p>
+                    <ul class="space-y-2 text-sm text-brand-text">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Personalized feed based on interests</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Similar article suggestions</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle text-[6px] text-brand-muted mt-1.5"></i>
+                            <span>Author recommendations</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-8 text-center text-white">
+            <i class="fa-solid fa-headset text-5xl mb-4 opacity-90"></i>
+            <h2 class="text-2xl font-bold mb-3">Need help with your account?</h2>
+            <p class="text-white/80 mb-6 max-w-xl mx-auto">Our support team is here to help you with any account-related questions or issues.</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition-all">
+                    <i class="fa-regular fa-envelope mr-2"></i>Email Support
+                </button>
+                <button class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full font-bold hover:bg-white/30 transition-all">
+                    <i class="fa-regular fa-comments mr-2"></i>Live Chat
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-100 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-sm text-brand-muted">© 2024 Bace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../sidebar.js"></script>
+</body>
+</html>

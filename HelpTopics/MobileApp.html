@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App - Bace Help</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            orange: '#FF5722', black: '#1A1A1A', gray: '#F5F5F5',
+                            text: '#333333', muted: '#888888'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../sidebar.css">
+</head>
+<body class="bg-white text-brand-text font-sans antialiased">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../help.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <i class="fa-solid fa-arrow-left text-brand-muted"></i>
+                    <span class="text-sm font-medium text-brand-muted">Back to Help</span>
+                </a>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold">
+                        <i class="fa-solid fa-b"></i>
+                    </div>
+                    <span class="text-xl font-bold text-brand-black">Bace</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-br from-yellow-50 to-amber-50 py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="w-20 h-20 bg-yellow-500 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 shadow-lg">
+                <i class="fa-solid fa-mobile-screen text-4xl"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-brand-black mb-4">Mobile App</h1>
+            <p class="text-lg text-brand-muted max-w-2xl mx-auto">Get help with our iOS and Android apps. Download, install, and troubleshoot.</p>
+        </div>
+    </section>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+            <a href="#download" class="p-4 rounded-xl border border-gray-200 hover:border-brand-orange hover:shadow-md transition-all text-center group">
+                <i class="fa-solid fa-download text-2xl text-brand-orange mb-2"></i>
+                <p class="text-sm font-bold text-brand-black group-hover:text-brand-orange">Download & Install</p>
+            </a>
+            <a href="#features" class="p-4 rounded-xl border border-gray-200 hover:border-brand-orange hover:shadow-md transition-all text-center group">
+                <i class="fa-solid fa-star text-2xl text-brand-orange mb-2"></i>
+                <p class="text-sm font-bold text-brand-black group-hover:text-brand-orange">App Features</p>
+            </a>
+            <a href="#troubleshoot" class="p-4 rounded-xl border border-gray-200 hover:border-brand-orange hover:shadow-md transition-all text-center group">
+                <i class="fa-solid fa-wrench text-2xl text-brand-orange mb-2"></i>
+                <p class="text-sm font-bold text-brand-black group-hover:text-brand-orange">Troubleshooting</p>
+            </a>
+        </div>
+
+        <section id="download" class="mb-16">
+            <h2 class="text-3xl font-bold text-brand-black mb-6">Download & Install</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl p-8 text-white">
+                    <i class="fa-brands fa-apple text-5xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">iOS App</h3>
+                    <p class="text-white/80 text-sm mb-6">Available for iPhone and iPad running iOS 14.0 or later</p>
+                    <button class="bg-white text-gray-900 px-6 py-3 rounded-xl font-bold hover:bg-opacity-90 transition-all w-full">
+                        <i class="fa-brands fa-app-store mr-2"></i>Download on App Store
+                    </button>
+                    <p class="text-xs text-white/60 mt-4">Version 2.5.1 • 45.2 MB</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-8 text-white">
+                    <i class="fa-brands fa-android text-5xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">Android App</h3>
+                    <p class="text-white/80 text-sm mb-6">Available for Android 8.0 (Oreo) or later</p>
+                    <button class="bg-white text-green-800 px-6 py-3 rounded-xl font-bold hover:bg-opacity-90 transition-all w-full">
+                        <i class="fa-brands fa-google-play mr-2"></i>Get it on Google Play
+                    </button>
+                    <p class="text-xs text-white/60 mt-4">Version 2.5.0 • 38.7 MB</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <div class="flex gap-4">
+                    <i class="fa-solid fa-circle-info text-blue-500 text-xl flex-shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-brand-black mb-2">Installation steps</h4>
+                        <ol class="list-decimal list-inside space-y-1 text-sm text-brand-text">
+                            <li>Open the App Store (iOS) or Google Play Store (Android)</li>
+                            <li>Search for "Bace" or use the download buttons above</li>
+                            <li>Tap "Install" or "Get"</li>
+                            <li>Wait for the download to complete</li>
+                            <li>Open the app and sign in with your account</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="mb-16">
+            <h2 class="text-3xl font-bold text-brand-black mb-6">Mobile App Features</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-sync text-blue-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Seamless Sync</h3>
+                    <p class="text-sm text-brand-text">Your reading progress, saved articles, and preferences sync automatically across all your devices.</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-bell text-purple-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Push Notifications</h3>
+                    <p class="text-sm text-brand-text">Get notified about new articles from your favorite authors and trending topics you follow.</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-cloud-arrow-down text-green-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Offline Mode</h3>
+                    <p class="text-sm text-brand-text">Download articles for offline reading. Perfect for flights, commutes, or areas with poor connectivity.</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-fingerprint text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Biometric Login</h3>
+                    <p class="text-sm text-brand-text">Quick and secure login with Face ID, Touch ID, or fingerprint authentication.</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-share-nodes text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Native Sharing</h3>
+                    <p class="text-sm text-brand-text">Share articles directly to your favorite apps using native iOS and Android share sheets.</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-orange transition-all">
+                    <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-palette text-pink-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black mb-3">Dark Mode</h3>
+                    <p class="text-sm text-brand-text">Beautiful dark mode that's easy on the eyes and follows your system preferences automatically.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="troubleshoot" class="mb-16">
+            <h2 class="text-3xl font-bold text-brand-black mb-6">Troubleshooting</h2>
+            
+            <div class="space-y-4">
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        App crashes or freezes
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3">Try these solutions:</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Force close the app and reopen it</li>
+                            <li>Check for app updates in the App Store/Play Store</li>
+                            <li>Restart your device</li>
+                            <li>Clear the app cache (Settings > Apps > Bace > Clear Cache)</li>
+                            <li>Uninstall and reinstall the app (your data will be preserved)</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        Sync issues between devices
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3">If your data isn't syncing:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-orange mt-0.5"></i>
+                                <span>Ensure you're logged into the same account on all devices</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-orange mt-0.5"></i>
+                                <span>Check your internet connection</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-orange mt-0.5"></i>
+                                <span>Pull down to refresh on the home screen</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-orange mt-0.5"></i>
+                                <span>Sign out and sign back in</span>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        Can't download articles
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3">Check the following:</p>
+                        <ul class="space-y-2">
+                            <li>• Verify you have an active Premium subscription</li>
+                            <li>• Ensure you have enough storage space on your device</li>
+                            <li>• Check your internet connection</li>
+                            <li>• Try downloading a different article to test</li>
+                            <li>• Clear app cache and try again</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        Notifications not working
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3">To fix notification issues:</p>
+                        <ol class="list-decimal list-inside space-y-2">
+                            <li>Check notification settings in the Bace app</li>
+                            <li>Verify notifications are enabled in your device settings:
+                                <ul class="ml-6 mt-2 space-y-1 text-xs">
+                                    <li>iOS: Settings > Notifications > Bace</li>
+                                    <li>Android: Settings > Apps > Bace > Notifications</li>
+                                </ul>
+                            </li>
+                            <li>Ensure "Do Not Disturb" mode is off</li>
+                            <li>Check battery optimization settings (Android)</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details class="bg-white border border-gray-200 rounded-xl overflow-hidden group">
+                    <summary class="p-5 cursor-pointer hover:bg-gray-50 transition-colors font-bold text-brand-black flex items-center justify-between">
+                        How to update the app
+                        <i class="fa-solid fa-chevron-down text-brand-muted group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-brand-text leading-relaxed">
+                        <p class="mb-3"><strong>iOS:</strong></p>
+                        <ol class="list-decimal list-inside space-y-1 mb-4 text-sm">
+                            <li>Open the App Store</li>
+                            <li>Tap your profile icon in the top right</li>
+                            <li>Scroll to find Bace</li>
+                            <li>Tap "Update" if available</li>
+                        </ol>
+                        <p class="mb-3"><strong>Android:</strong></p>
+                        <ol class="list-decimal list-inside space-y-1 text-sm">
+                            <li>Open Google Play Store</li>
+                            <li>Tap your profile icon</li>
+                            <li>Select "Manage apps & device"</li>
+                            <li>Find Bace and tap "Update"</li>
+                        </ol>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-br from-yellow-600 to-orange-600 rounded-3xl p-8 text-center text-white">
+            <i class="fa-solid fa-headset text-5xl mb-4 opacity-90"></i>
+            <h2 class="text-2xl font-bold mb-3">Still having issues?</h2>
+            <p class="text-white/80 mb-6 max-w-xl mx-auto">Our mobile support team is ready to help you resolve any app-related problems.</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <button class="bg-white text-yellow-600 px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition-all">
+                    <i class="fa-regular fa-envelope mr-2"></i>Email Support
+                </button>
+                <button class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full font-bold hover:bg-white/30 transition-all">
+                    <i class="fa-regular fa-comments mr-2"></i>Live Chat
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-100 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-sm text-brand-muted">© 2024 Bace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../sidebar.js"></script>
+</body>
+</html>
